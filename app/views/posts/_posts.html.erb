@@ -38,15 +38,19 @@
   <br<%= show_page ? raw(' id="comment_form"') : raw(" id=\"comment_form_#{post.id}\"") %>/>
   <div>
     <% if (post.likes_from current_user).size > 0 %>
-      <%= link_to raw("<button>You liked this</button>"), destroy_like_path(post.likes_from(current_user).first), method: :delete %>
+      <%= link_to raw("<button>You reacted to this</button>"), destroy_like_path(post.likes_from(current_user).first), method: :delete %>
     <% else %>
-      <%= form_tag("/posts/#{post.id}/likes", method: "post", class: "comments") do %>
-        <%= submit_tag("👍 Like") %>
+      <%= form_tag("/posts/#{post.id}/likes", method: "post", class: "comments reaction-field") do %>
+        <%= submit_tag("💜 thx") %>
+      <% end %>
+      <%= form_tag("/posts/#{post.id}/likes", method: "post", class: "comments reaction-field-custom") do %>
+        <%= text_field_tag(:reaction, nil, {placeholder: "Выбрать реакцию"}) %>
+        <%= submit_tag("send reaction") %>
       <% end %>
     <% end %>
-    <%= form_tag("/posts/#{post.id}/comments", method: "post", class: "comments") do %>
-      <%= text_field_tag(:comment_body, nil, {placeholder: "Write a comment..."}) %>
-      <%= submit_tag("Post Comment") %>
+    <%= form_tag("/posts/#{post.id}/comments", method: "post", class: "comments comment-field") do %>
+      <%= text_field_tag(:comment_body, nil, {placeholder: "Оставить мнение..."}) %>
+      <%= submit_tag("Отослать мнение") %>
     <% end %>
   </div>
 <% end %>

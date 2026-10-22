@@ -13,29 +13,30 @@ gem 'commonmarker', '~> 0.23'
 gem 'sassc', '~> 2.4.0'
 
 # For making user stylesheet !important
-gem 'css_parser', '= 1.21.1' # pinned because we use private methods
+gem 'css_parser', '3.0.0' # pinned because we use private methods
 
 gem 'rb-readline'
 
 # Image processing
-gem 'image_processing', '~> 1.13.0'
+gem 'image_processing', '~> 2.0.2'
+gem 'mini_magick', '~> 5.3.1'
 
 gem 'rss', '~> 0.3.1'
 
 # For Auth
-gem 'devise', '~> 4.9.4'
+gem 'devise', '~> 5.0.4'
 gem 'bcrypt', '~> 3.1.22'
 
 # Pagination
 gem 'kaminari', '~> 1.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1.5.2'
+gem 'rails', '= 8.0.5.1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg', '~> 1.5.9'
 # Use Puma as the app server
-gem 'puma', '~> 5.6.9'
+gem 'puma', '~> 7.2.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -77,7 +78,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 3.39'
   gem 'capybara-lockstep'
-  gem 'selenium-webdriver', '~> 4.11.0'
+  gem 'selenium-webdriver', '~> 4.50.0'
   # Easy installation and use of chromedriver to run system tests with Chrome
 #  gem 'webdrivers', '~> 5.2'
 end
